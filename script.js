@@ -1,1 +1,5 @@
-console.log("hello world")
+function getComputerChoice() {
+    return Math.random();
+}
+
+console.log(getComputerChoice())
