@@ -10,17 +10,17 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    let humanChoice = prompt("Rock, Paper or Scissors?")
-    if (humanChoice.toUpperCase() == "ROCK") {
-        return "Rock"
-    }   else if (humanChoice.toUpperCase() == "PAPER") {
-        return "Paper" 
-    }   else if (humanChoice.toUpperCase() == "SCISSORS") {
-        return "Scissors"
-    }   else {
-        return "Error"
+    let humanChoice
+    while (true) {
+        let humanChoice = prompt("Rock, Paper or Scissors?")
+        if (humanChoice.toUpperCase() == "ROCK") {
+            return "Rock"
+        }   else if (humanChoice.toUpperCase() == "PAPER") {
+            return "Paper" 
+        }   else if (humanChoice.toUpperCase() == "SCISSORS") {
+            return "Scissors"
+        }
     }
-    return humanChoice
 }
 
 console.log("Player chooses " + getHumanChoice())
