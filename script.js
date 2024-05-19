@@ -42,24 +42,30 @@ function playRound(humanSelection, computerSelection) {
     if (humanSelection == computerSelection) {
         return "Draw!"
     }
-    // Compares player and computer selection to determin the winner
+    // Compares player and computer selection to determine the winner and increments score
     switch (humanSelection) {
         case "Rock":
             if (computerSelection == "Scissors") {
+                humanScore++
                 return "You Win! Rock beats Scissors!"
         } else {
+                computerScore++
                 return "You Lose! Paper beats Rock"
             }
         case "Scissors":
             if (computerSelection == "Paper") {
+                humanScore++
                 return "You Win! Scissors beats Paper!"
         } else {
+                computerScore++
                 return "You Lose! Rock beats Scissors"
             }
         case "Paper":
             if (computerSelection == "Rock") {
+                humanScore++
                 return "You Win! Paper beats Rock!"
         } else {
+                computerScore++
                 return "You Lose! Scissors beats Paper"
             }
     }
@@ -69,4 +75,4 @@ function playRound(humanSelection, computerSelection) {
 console.log("Player chooses " + humanSelection)
 console.log("Computer chooses " + computerSelection)
 console.log(playRound(humanSelection, computerSelection))
-
+console.log("Score: Player = " + humanScore + " Computer = " + computerScore)
