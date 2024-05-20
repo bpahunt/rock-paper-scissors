@@ -69,6 +69,7 @@ function playRound(humanSelection, computerSelection) {
     }
 }
 
+// Function to evaluate final score after 5 rounds of the game
 function finalScore () {
     if (humanScore > computerScore) {
         return "Congratulations! You Win!"
@@ -79,6 +80,7 @@ function finalScore () {
     }
 }
 
+// Function to play 5 rounds of the game by calling playRound function and provide feedback to player
 function playGame () {   
     for (i=1; i <6; i++) {
         const humanSelection = getHumanChoice()
@@ -93,4 +95,5 @@ function playGame () {
     console.log(finalScore())
 }
 
+// Calls main function
 playGame();
