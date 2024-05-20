@@ -1,7 +1,5 @@
 let humanScore = 0
 let computerScore = 0
-const humanSelection = getHumanChoice()
-const computerSelection = getComputerChoice()
 
 // Function to generate random choice for the computer of "Rock", "Paper" or "Scissors"
 function getComputerChoice() {
@@ -71,8 +69,28 @@ function playRound(humanSelection, computerSelection) {
     }
 }
 
-// Log player and computer choices to console
-console.log("Player chooses " + humanSelection)
-console.log("Computer chooses " + computerSelection)
-console.log(playRound(humanSelection, computerSelection))
-console.log("Score: Player = " + humanScore + " Computer = " + computerScore)
+function finalScore () {
+    if (humanScore > computerScore) {
+        return "Congratulations! You Win!"
+    } else if (computerScore > humanScore) {
+        return "Sorry! You Lose"
+    } else {
+        return "It's a draw"
+    }
+}
+
+function playGame () {   
+    for (i=1; i <6; i++) {
+        const humanSelection = getHumanChoice()
+        const computerSelection = getComputerChoice()
+        console.clear()
+        console.log("Round " + i)
+        console.log("Player chooses " + humanSelection)
+        console.log("Computer chooses " + computerSelection)
+        console.log(playRound(humanSelection, computerSelection))
+        console.log("Score: Player = " + humanScore + " Computer = " + computerScore)
+    }
+    console.log(finalScore())
+}
+
+playGame();
