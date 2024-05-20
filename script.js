@@ -69,14 +69,14 @@ function playRound(humanSelection, computerSelection) {
     }
 }
 
-// Function to evaluate final score after 5 rounds of the game
+// Function to evaluate winner after 5 rounds of the game
 function finalScore () {
     if (humanScore > computerScore) {
-        return "Congratulations! You Win!"
+        return "Game Over - Congratulations! You Win!"
     } else if (computerScore > humanScore) {
-        return "Sorry! You Lose"
+        return "Game Over - Sorry! You Lose"
     } else {
-        return "It's a draw"
+        return "Game Over - It's a draw"
     }
 }
 
@@ -86,7 +86,7 @@ function playGame () {
         const humanSelection = getHumanChoice()
         const computerSelection = getComputerChoice()
         console.clear()
-        console.log("Round " + i)
+        console.log("Round " + i + " of 5")
         console.log("Player chooses " + humanSelection)
         console.log("Computer chooses " + computerSelection)
         console.log(playRound(humanSelection, computerSelection))
